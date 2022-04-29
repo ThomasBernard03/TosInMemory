@@ -7,6 +7,8 @@ Pour ce tos nous allons créer un jeu de données très simple
 
 Pré-requis :
 
+On ajoute ces différents packages à notre projet
+
 ```XML
 <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.4" />
 <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.4" />
@@ -14,7 +16,7 @@ Pré-requis :
 <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.4" />
 ```
 
-
+On peut alors saisir cette commande afin de générer nos classes en fonction de notre schéma de base de données
 ```
 dotnet ef dbcontext scaffold "Data Source=databaseserveraddress;Initial Catalog=TosInMemory;Persist Security Info=True;User ID=username;Password=password" Microsoft.EntityFrameworkCore.SqlServer
 ```
