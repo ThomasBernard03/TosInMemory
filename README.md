@@ -25,22 +25,23 @@ dotnet ef dbcontext scaffold "Data Source=databaseserveraddress;Initial Catalog=
 Nos entitées sont alors générées
 
 ```C#
-	public class ClubService
+public class ClubService
+{
+	private readonly TosInMemoryContext _tosInMemoryContext;
+
+	public ClubService()
 	{
-		private readonly TosInMemoryContext _tosInMemoryContext;
+		_tosInMemoryContext = new();
+	}
 
-		public ClubService()
-		{
-			_tosInMemoryContext = new();
-		}
-
-		/// <summary>
+	/// <summary>
         /// This method generate a random number of clubs
         /// </summary>
 		public void GenerateClubs()
         {
         }
-	}
+}
+
   
 
 
