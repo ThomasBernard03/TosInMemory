@@ -8,9 +8,9 @@ Pour ce tos nous allons créer un jeu de données très simple
 Pré-requis :
 
 ```XML
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.4" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.4" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.4">
-
+<PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.4" />
+<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.4" />
+<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.4">
+<PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.4" />
 ```
 
