@@ -16,8 +16,8 @@ Pré-requis :
 
 
 ```
-dotnet ef dbcontext scaffold "Data Source=tosthomasinmemory.database.windows.net;Initial Catalog=TosInMemory;Persist Security Info=True;User ID=tosthomasuser;Password=plopAzerty@1234" Microsoft.EntityFrameworkCore.SqlServer
-![image](https://user-images.githubusercontent.com/67638928/165965694-1fba5f91-da87-4139-9f38-91a27d6302b7.png)
+dotnet ef dbcontext scaffold "Data Source=databaseserveraddress;Initial Catalog=TosInMemory;Persist Security Info=True;User ID=username;Password=password" Microsoft.EntityFrameworkCore.SqlServer
+```
 
 
 
