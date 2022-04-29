@@ -38,7 +38,7 @@ public class ClubService
 	/// <summary>
         /// This method generate a random number of clubs
         /// </summary>
-		public void GenerateClubs()
+	public void GenerateClubs()
         {
         }
 }
