@@ -1,27 +1,33 @@
 ﻿using System.Linq;
 using TosInMemory.Tests.Models;
 using TosInMemory.Tests.Services;
+using TosInMemory.Tests.Services.Interfaces;
 using Xunit;
 
 namespace TosInMemory.Tests;
 
 public class TosInMemoryUnitTest
 {
-    private readonly LeagueService _leagueService;
+    private readonly IFactory<League> _leagueService;
+    private readonly IFactory<Club> _clubService;
+    private readonly TosInMemoryContext _tosInMemoryContext;
 
     public TosInMemoryUnitTest()
     {
-        _leagueService = new();
+        _leagueService = new LeagueService();
+        _clubService = new ClubService();
+        _tosInMemoryContext = new TosInMemoryContext();
+
+        _leagueService.Generate(100);
+        _clubService.Generate(200);
     }
 
     [Fact]
     public void TestLeagueOk()
     {
-        var numberExpectedLeagues = 100;
-        var leagues = _leagueService.Generate(numberExpectedLeagues);
-
-        Assert.Equal(numberExpectedLeagues, leagues.Count());
+        Assert.Equal(100, _tosInMemoryContext.Leagues.Count());
     }
+
 
     [Fact]
     public void TestLeagueKo()
@@ -29,13 +35,14 @@ public class TosInMemoryUnitTest
         var numberExpectedLeagues = 100;
         var leagues = _leagueService.Generate(numberExpectedLeagues);
 
-        Assert.NotEqual(numberExpectedLeagues, leagues.Count());
+        Assert.NotEqual(100, _tosInMemoryContext.Leagues.Count());
     }
 
 
     [Fact]
-    public void TestClubs()
+    public void TestClubsOk()
     {
-
+        Assert.Equal(200, _tosInMemoryContext.Clubs.Count());
     }
+
 }
