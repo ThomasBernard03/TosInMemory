@@ -53,7 +53,18 @@ public class ClubService
         }
 }
 ````
-On peut alors créé des jeux d'essais sur lequls nous pourront réaliser nos tests afin de valider nos modèles
+On peut alors créer des jeux d'essais sur lequls nous pourront réaliser nos tests afin de valider nos modèles
+
+```C#
+public interface IFactory<T>
+{
+	Task<IEnumerable<T>> Generate(int numberOfItems);
+}
+```
+Pour générer un jeu d'essai conséquent je créé alors des factories qui génère les entitées et les enregistre dans la base InMemory.
+
+On peut alors tester nos données sur un grand jeu d'essai car la base de données est stockées en local et possède de très bonnes performances.
+
 
 
   
