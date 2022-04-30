@@ -24,7 +24,7 @@ namespace TosInMemory.Tests.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseInMemoryDatabase("Data Source=tosthomasinmemory.database.windows.net;Initial Catalog=TosInMemory;Persist Security Info=True;User ID=tosthomasuser;Password=plopAzerty@1234");
+                optionsBuilder.UseInMemoryDatabase("Data Source=databaseserveraddress;Initial Catalog=TosInMemory;Persist Security Info=True;User ID=username;Password=password");
             }
         }
 
