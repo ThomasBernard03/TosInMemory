@@ -4,6 +4,13 @@
 
 InMemory est un fournisseur de base de données en mémoire pour Entity Framework Core. Il est utile lorsque vous souhaitez tester des composants en utilisant quelque chose qui se rapproche de la connexion à la base de données réelle, sans la surcharger avec des opérations de base de données réelles.
 
+## Pourquoi vous devriez utiliser Microsoft.EntityFrameworkCore.InMemory
+
+- Microsoft.EntityFrameworkCore.InMemory permet de tester des données sur votre base sans faire aucune opération sur celle-ci. En effet la base de données utilisées sera une copie de la votre en mémoire, les données insérées, supprimées et modifiées se feront uniquement sur la base en mémoire. Seul la structure est identique à la vraie base.
+
+
+## Démonstration
+
 Pour ce tos nous allons créer un jeu de données très simple
 <img width="732" alt="image" src="https://user-images.githubusercontent.com/67638928/165962051-e561deeb-0fb0-4d14-af5b-9c45a5310a82.png">
 
