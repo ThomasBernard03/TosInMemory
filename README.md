@@ -1,5 +1,8 @@
 # TosInMemory
 
+## Introduction 
+
+InMemory est un fournisseur de base de données en mémoire pour Entity Framework Core. Il est utile lorsque vous souhaitez tester des composants en utilisant quelque chose qui se rapproche de la connexion à la base de données réelle, sans la surcharger avec des opérations de base de données réelles.
 
 Pour ce tos nous allons créer un jeu de données très simple
 <img width="732" alt="image" src="https://user-images.githubusercontent.com/67638928/165962051-e561deeb-0fb0-4d14-af5b-9c45a5310a82.png">
