@@ -18,18 +18,19 @@ namespace TosInMemory.Tests.Services
 			_tosInMemoryContext = new();
 		}
 
-        public async Task<IEnumerable<Club>> Generate(int numberOfItems)
+        public IEnumerable<Club> Generate(int numberOfItems)
         {
             var clubs = new List<Club>();
+            var leagues = _tosInMemoryContext.Leagues.ToList();
 
             for (int i = 0; i < numberOfItems; i++)
             {
-                var league = _tosInMemoryContext.Leagues.ToList()[_random.Next(_tosInMemoryContext.Leagues.Count())];
-                var club = new Club() { Name = _clubsName[_random.Next(_clubsName.Count())], League = league, LeagueId = league.Id, Score = _random.Next(50) };
+                var league = leagues[_random.Next(_tosInMemoryContext.Leagues.Count() - 1)];
+                var club = new Club() { Name = _clubsName[_random.Next(_clubsName.Count() - 1)], League = league, LeagueId = league.Id, Score = _random.Next(50) };
                 clubs.Add(club);
             }
             _tosInMemoryContext.AddRange(clubs);
-            await _tosInMemoryContext.SaveChangesAsync();
+            _tosInMemoryContext.SaveChanges();
             return clubs;
         }
 	}

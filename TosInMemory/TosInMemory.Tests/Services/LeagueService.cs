@@ -17,7 +17,7 @@ namespace TosInMemory.Tests.Services
 			_tosInMemoryContext = new();
 		}
 
-        public async Task<IEnumerable<League>> Generate(int numberOfItems)
+        public IEnumerable<League> Generate(int numberOfItems)
         {
             var leagues = new List<League>();
 
@@ -27,7 +27,7 @@ namespace TosInMemory.Tests.Services
                 leagues.Add(league);
             }
             _tosInMemoryContext.AddRange(leagues);
-            await _tosInMemoryContext.SaveChangesAsync();
+            _tosInMemoryContext.SaveChanges();
             return leagues;
         }
     }
