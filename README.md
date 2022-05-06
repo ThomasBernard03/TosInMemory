@@ -36,7 +36,7 @@ dotnet ef dbcontext scaffold "Data Source=databaseserveraddress;Initial Catalog=
 Nos entitées sont alors générées
 
 ```C#
-public class ClubService
+public class ClubService : IFactory<Club>
 {
 	private readonly TosInMemoryContext _tosInMemoryContext;
 
